@@ -1,17 +1,20 @@
 package com.clouldschool.homework4.Controllers;
 
 import com.clouldschool.homework4.Service.CustomerService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@AllArgsConstructor
 @RequiredArgsConstructor
 public class CustomerViewController {
-
-    private final CustomerService customerService;
+    @Autowired
+    CustomerService customerService;
 
     @GetMapping("customers")
     public String getCustomers(Model model) {
@@ -25,9 +28,9 @@ public class CustomerViewController {
         return "customers";
     }
 
-    @GetMapping("customers/filter/{filterTable}/{filter}")
-    public String getCustomersFiltered(Model model, @PathVariable String filter, @PathVariable String filterTable) {
-        model.addAttribute("customerFiltered", customerService.getCustomersFiltered(filter, filterTable));
+    @GetMapping("customers/filter/{filter}/{filterValue}")
+    public String getCustomersFiltered(Model model, @PathVariable String filter, @PathVariable String filterValue) {
+        model.addAttribute("customerFiltered", customerService.getCustomersFiltered(filter, filterValue));
         return "customers";
     }
 }

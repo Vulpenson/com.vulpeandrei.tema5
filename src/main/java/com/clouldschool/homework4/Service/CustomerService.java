@@ -29,9 +29,28 @@ public class CustomerService {
         return aux;
     }
 
-    public List<Customer> getCustomersFiltered(String filter, String filterTable){
+    public List<Customer> getCustomersFiltered(String filter, String filterValue){
         List<Customer> aux = new ArrayList<>();
-        customerRepository.findAll();
+        customerRepository.findAll().iterator().forEachRemaining(aux::add);
+        for (Customer customer: aux) {
+            switch (filter) {
+                case "username":
+                    if(!customer.getUsername().equals(filterValue)) {
+                        aux.remove(customer);
+                    }
+                    break;
+                case "city":
+                    if(!customer.getCity().equals(filterValue)) {
+                        aux.remove(customer);
+                    }
+                    break;
+                case "country":
+                    if (!customer.getCountry().equals(filterValue)) {
+                        aux.remove(customer);
+                    }
+                    break;
+            }
+        }
         return aux;
     }
 
