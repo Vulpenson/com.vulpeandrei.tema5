@@ -1,15 +1,20 @@
-Vulpe Andrei - Tema 4 - 22.07.2022
+Vulpe Andrei - Tema 5 - 05.08.2022
 -------------------------------------------------------------------------------
 The goal of this homework is to create a small working Java Spring API.
 -------------------------------------------------------------------------------
 Requirements:
-• Create controller classes for customers, products and orders
-• Implement methods to get all values, get by id, insert, update and delete
+• Implement DAO pattern for the project - customer, product, orders
+• Create a simple HTML pages to display customers using thymeleaf
+• All customers
+• One customer by ID
+• Filter customers by username, city, country
 -------------------------------------------------------------------------------
 Implementation:
 The project contains four packages:
 - Controllers
 - Model
+- DTO
+- Mapper
 - Repository
 - Service
 
@@ -17,3 +22,7 @@ Each package contains Java Spring Classes for each table found in the database:
 - Customer
 - Orders
 - Product
+
+Notes:
+Had lots of problems with dependencies, this resulting in not fully implementing DTO (wanted to implement DTO only for
+customers). Also, the API does not run because of a problem of dependencies which I did not solve.
