@@ -2,6 +2,7 @@ package com.clouldschool.homework4.Controllers;
 
 import com.clouldschool.homework4.Model.Customer;
 import com.clouldschool.homework4.Service.CustomerService;
+import com.clouldschool.homework4.dto.CustomerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -25,9 +25,9 @@ public class CustomerViewController {
         return "customers";
     }
 
-    @GetMapping("customers/filter/{filter}")
-    public String getCustomersFiltered(Model model, @PathVariable String filter) {
-        model.addAttribute("customerFiltered", customerService.getCustomersFiltered());
+    @GetMapping("customers/filter/{filterTable}/{filter}")
+    public String getCustomersFiltered(Model model, @PathVariable String filter, @PathVariable String filterTable) {
+        model.addAttribute("customerFiltered", customerService.getCustomersFiltered(filter, filterTable));
         return "customers";
     }
 }

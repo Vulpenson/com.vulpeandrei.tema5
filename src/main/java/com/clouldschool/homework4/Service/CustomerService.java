@@ -29,8 +29,9 @@ public class CustomerService {
         return aux;
     }
 
-    public List<Customer> getCustomersFiltered(){
+    public List<Customer> getCustomersFiltered(String filter, String filterTable){
         List<Customer> aux = new ArrayList<>();
+        customerRepository.findAll();
         return aux;
     }
 
