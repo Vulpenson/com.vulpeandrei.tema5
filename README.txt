@@ -10,7 +10,7 @@ Requirements:
 • Filter customers by username, city, country
 -------------------------------------------------------------------------------
 Implementation:
-The project contains four packages:
+The project contains six packages:
 - Controllers
 - Model
 - DTO
